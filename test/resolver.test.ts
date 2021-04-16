@@ -66,7 +66,6 @@ async function fetch(options: any, body: any) {
     });
 
     if (body) {
-      console.log(body);
       request.write(body);
     }
 

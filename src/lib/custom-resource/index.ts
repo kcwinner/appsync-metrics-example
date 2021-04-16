@@ -50,6 +50,7 @@ export const handler = async (event: Event) => {
   console.log("## GOT RESULT ##");
   console.log(result);
 
+  // So the log group will be created
   await sleep(10000);
 
   return {
@@ -58,7 +59,6 @@ export const handler = async (event: Event) => {
 };
 
 async function fetch(options: any, body: any) {
-  console.log("## FETCHING:", options);
   return new Promise((resolve, reject) => {
     const request = https.request(options, (resp) => {
       let data = "";
