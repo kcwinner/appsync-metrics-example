@@ -1,0 +1,403 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot 1`] = `
+Object {
+  "Outputs": Object {
+    "apikey": Object {
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+          "Outputs.testexampleapiappsyncnestedstackexampleapiapiDefaultApiKey0E1FCA21ApiKey",
+        ],
+      },
+    },
+    "appsyncGraphQLEndpointOutput": Object {
+      "Description": "Output for aws_appsync_graphqlEndpoint",
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+          "Outputs.testexampleapiappsyncnestedstackexampleapiapi7CEC8F3EGraphQLUrl",
+        ],
+      },
+    },
+    "appsyncarn": Object {
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+          "Outputs.testexampleapiappsyncnestedstackexampleapiapi7CEC8F3EArn",
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4bArtifactHash17559DF5": Object {
+      "Description": "Artifact hash for asset \\"0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4b\\"",
+      "Type": "String",
+    },
+    "AssetParameters0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4bS3BucketADF9150E": Object {
+      "Description": "S3 bucket for asset \\"0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4b\\"",
+      "Type": "String",
+    },
+    "AssetParameters0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4bS3VersionKey7D130CA9": Object {
+      "Description": "S3 key for asset version \\"0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4b\\"",
+      "Type": "String",
+    },
+    "AssetParametersb0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4cArtifactHash824A6C14": Object {
+      "Description": "Artifact hash for asset \\"b0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4c\\"",
+      "Type": "String",
+    },
+    "AssetParametersb0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4cS3BucketEE9CBAA2": Object {
+      "Description": "S3 bucket for asset \\"b0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4c\\"",
+      "Type": "String",
+    },
+    "AssetParametersb0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4cS3VersionKey1A11FAEF": Object {
+      "Description": "S3 key for asset version \\"b0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4c\\"",
+      "Type": "String",
+    },
+    "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cArtifactHash627DAAA7": Object {
+      "Description": "Artifact hash for asset \\"c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c\\"",
+      "Type": "String",
+    },
+    "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43": Object {
+      "Description": "S3 bucket for asset \\"c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c\\"",
+      "Type": "String",
+    },
+    "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7": Object {
+      "Description": "S3 key for asset version \\"c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "AppSyncFailedHTTPResolver3E3A49B5": Object {
+      "DependsOn": Array [
+        "CustomResource",
+        "httpresource50F2051D",
+        "httpresourceServiceRoleBC682115",
+      ],
+      "Properties": Object {
+        "FilterPattern": "{ ($.logType = \\"ResponseMapping\\") && ($.context.result.statusCode != 2* && $.context.result.statusCode != 3*) }",
+        "LogGroupName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "/aws/appsync/apis/",
+              Object {
+                "Fn::GetAtt": Array [
+                  "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+                  "Outputs.testexampleapiappsyncnestedstackexampleapiapi7CEC8F3EApiId",
+                ],
+              },
+            ],
+          ],
+        },
+        "MetricTransformations": Array [
+          Object {
+            "DefaultValue": 0,
+            "MetricName": "AppSyncFailedHTTPResolver",
+            "MetricNamespace": "test",
+            "MetricValue": "1",
+          },
+        ],
+      },
+      "Type": "AWS::Logs::MetricFilter",
+    },
+    "CustomResource": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "httpproviderframeworkonEvent41B375C5",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::CustomResource",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "TemplateURL": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "https://s3.",
+              Object {
+                "Ref": "AWS::Region",
+              },
+              ".",
+              Object {
+                "Ref": "AWS::URLSuffix",
+              },
+              "/",
+              Object {
+                "Ref": "AssetParameters0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4bS3BucketADF9150E",
+              },
+              "/",
+              Object {
+                "Fn::Select": Array [
+                  0,
+                  Object {
+                    "Fn::Split": Array [
+                      "||",
+                      Object {
+                        "Ref": "AssetParameters0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4bS3VersionKey7D130CA9",
+                      },
+                    ],
+                  },
+                ],
+              },
+              Object {
+                "Fn::Select": Array [
+                  1,
+                  Object {
+                    "Fn::Split": Array [
+                      "||",
+                      Object {
+                        "Ref": "AssetParameters0ef0fe3d2c82ef15a691963df06e48f04f06964c8fc88ef00241787438a83b4bS3VersionKey7D130CA9",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "httpproviderframeworkonEvent41B375C5": Object {
+      "DependsOn": Array [
+        "httpproviderframeworkonEventServiceRoleDefaultPolicy9F1D647F",
+        "httpproviderframeworkonEventServiceRoleA47DF8D8",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "AWS CDK resource provider framework - onEvent (test/http-provider)",
+        "Environment": Object {
+          "Variables": Object {
+            "USER_ON_EVENT_FUNCTION_ARN": Object {
+              "Fn::GetAtt": Array [
+                "httpresource50F2051D",
+                "Arn",
+              ],
+            },
+          },
+        },
+        "Handler": "framework.onEvent",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "httpproviderframeworkonEventServiceRoleA47DF8D8",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "httpproviderframeworkonEventServiceRoleA47DF8D8": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "httpproviderframeworkonEventServiceRoleDefaultPolicy9F1D647F": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::GetAtt": Array [
+                  "httpresource50F2051D",
+                  "Arn",
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "httpproviderframeworkonEventServiceRoleDefaultPolicy9F1D647F",
+        "Roles": Array [
+          Object {
+            "Ref": "httpproviderframeworkonEventServiceRoleA47DF8D8",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "httpresource50F2051D": Object {
+      "DependsOn": Array [
+        "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+        "httpresourceServiceRoleBC682115",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParametersb0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4cS3BucketEE9CBAA2",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersb0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4cS3VersionKey1A11FAEF",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersb0cb3c89de22a8b433b3e0e18871d64731e4e8a014df53f9cba00cdf64a70d4cS3VersionKey1A11FAEF",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "API_KEY": Object {
+              "Fn::GetAtt": Array [
+                "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+                "Outputs.testexampleapiappsyncnestedstackexampleapiapiDefaultApiKey0E1FCA21ApiKey",
+              ],
+            },
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "GRAPHQL_URL": Object {
+              "Fn::GetAtt": Array [
+                "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+                "Outputs.testexampleapiappsyncnestedstackexampleapiapi7CEC8F3EGraphQLUrl",
+              ],
+            },
+          },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "httpresourceServiceRoleBC682115",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs12.x",
+        "Timeout": 180,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "httpresourceServiceRoleBC682115": Object {
+      "DependsOn": Array [
+        "exampleapiappsyncnestedstackNestedStackappsyncnestedstackNestedStackResource5372748F",
+      ],
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;

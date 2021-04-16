@@ -1,0 +1,9 @@
+type Todo {
+  id: Int!
+  userId: Int!
+  title: String!
+}
+
+type Query {
+  getTodo: Todo @http(url: "https://jsonplaceholder.typicode.com/todos/:id")
+}
